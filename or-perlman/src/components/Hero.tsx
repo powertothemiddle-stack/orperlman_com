@@ -70,7 +70,7 @@ export default function Hero() {
       description: "Empowering the next generation of business architects through exxperience-based learning",
       bullets: [
         "Mentor and leadership facilitator ",
-        "Advanced Marketing lecturer at Code University for Applied Sciences",
+        "Advanced Marketing lecturer at Code University of Applied Sciences",
         "Board member of World Merit, a community of changemakers"
       ],
       buttonText: "INQUIRE MENTORING",
