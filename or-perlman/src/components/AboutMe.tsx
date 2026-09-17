@@ -1,7 +1,7 @@
 import { motion } from "motion/react";
 import { User } from "lucide-react";
 // @ts-ignore
-import profilePic from "../assets/images/regenerated_image_1782896832746.jpg";
+import profilePic from "../assets/images/PXL_20260727_090125328.PORTRAIT.jpg";
 
 export default function AboutMe() {
   return (
