@@ -151,7 +151,7 @@ export default function CTA() {
               >
                 {copiedEmail ? (
                   <>
-                    <Check className="w-3.5 h-3.5" /> Email Copied!
+                    <Check className="w-3.5 h-3.5" /> Email Address Copied!
                   </>
                 ) : (
                   <>
