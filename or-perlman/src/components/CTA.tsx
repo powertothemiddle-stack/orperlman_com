@@ -155,7 +155,7 @@ export default function CTA() {
                   </>
                 ) : (
                   <>
-                    <Copy className="w-3.5 h-3.5" /> Copy my Email
+                    <Copy className="w-3.5 h-3.5" /> Write me an Email
                   </>
                 )}
               </button>
