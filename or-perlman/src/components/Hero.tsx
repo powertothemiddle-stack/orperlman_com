@@ -45,7 +45,7 @@ export default function Hero() {
     {
       id: "marketing",
       tag: "Fractional services",
-      image: "https://images.unsplash.com/photo-1634017839464-5c339ebe3cb4?q=80&w=1000&auto=format&fit=crop",
+      image: "https://images.unsplash.com/photo-1634017839464-5c339ebe3cb4?auto=format&fit=crop&w=700&q=75",
       gradient: "from-blue-950/40 via-transparent to-black/50",
       overlay: "Marketing & E-commerce",
       backLabel: "FRACTIONAL SERVICES",
@@ -62,7 +62,7 @@ export default function Hero() {
     {
       id: "education",
       tag: "Next Generation",
-      image: "https://images.unsplash.com/photo-1620121692029-d088224ddc74?q=80&w=1000&auto=format&fit=crop",
+      image: "https://images.unsplash.com/photo-1620121692029-d088224ddc74?auto=format&fit=crop&w=700&q=75",
       gradient: "from-zinc-950/40 via-transparent to-black/50",
       overlay: "Teaching & Mentoring",
       backLabel: "NEXT GENERATION",
@@ -79,7 +79,7 @@ export default function Hero() {
     {
       id: "e-commerce",
       tag: "Experiments",
-      image: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=1000&auto=format&fit=crop",
+      image: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=700&q=75",
       gradient: "from-purple-950/40 via-transparent to-black/50",
       overlay: "Shops & Products",
       backLabel: "EXPERIMENTS",
@@ -96,7 +96,7 @@ export default function Hero() {
     {
       id: "athletics",
       tag: "Human Movement",
-      image: "https://images.unsplash.com/photo-1552674605-db6ffd4facb5?q=80&w=1000&auto=format&fit=crop",
+      image: "https://images.unsplash.com/photo-1552674605-db6ffd4facb5?auto=format&fit=crop&w=700&q=75",
       gradient: "from-red-950/35 via-transparent to-black/50",
       overlay: "Mobility & Strength",
       backLabel: "HUMAN MOVEMENT",
@@ -144,8 +144,8 @@ export default function Hero() {
             variants={itemVariants}
             className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-2 scroll-mt-24"
           >
-            {gridItems.map((item) => (
-              <BentoCard key={item.id} item={item} />
+            {gridItems.map((item, index) => (
+              <BentoCard key={item.id} item={item} priority={index === 0} />
             ))}
           </motion.div>
         </motion.div>
@@ -168,6 +168,8 @@ export default function Hero() {
                   <img
                     src={p.src}
                     alt={p.name}
+                    loading="lazy"
+                    decoding="async"
                     className={p.className}
                     referrerPolicy="no-referrer"
                   />
@@ -195,7 +197,7 @@ interface BentoItem {
   buttonLink: string;
 }
 
-const BentoCard: React.FC<{ item: BentoItem }> = ({ item }) => {
+const BentoCard: React.FC<{ item: BentoItem; priority?: boolean }> = ({ item, priority = false }) => {
   const [isFlipped, setIsFlipped] = useState(false);
 
   const handleCardClick = (e: React.MouseEvent) => {
@@ -232,6 +234,11 @@ const BentoCard: React.FC<{ item: BentoItem }> = ({ item }) => {
           <img
             src={item.image}
             alt={item.tag}
+            width={700}
+            height={500}
+            loading={priority ? "eager" : "lazy"}
+            fetchPriority={priority ? "high" : "auto"}
+            decoding="async"
             referrerPolicy="no-referrer"
             className={`absolute inset-0 w-full h-full object-cover object-center transition-transform duration-700 ease-out ${
               isFlipped ? "scale-105" : "scale-100 group-hover:scale-105"
