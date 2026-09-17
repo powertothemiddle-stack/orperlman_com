@@ -38,10 +38,15 @@ export default function AboutMe() {
         >
           <div className="w-48 h-48 md:w-56 md:h-56 rounded-full overflow-hidden border border-zinc-200/80 shadow-md">
             <img
+              id="about-me-portrait"
               src={profilePic}
               alt="Or Perlman portrait"
+              width={224}
+              height={224}
+              loading="lazy"
+              decoding="async"
               referrerPolicy="no-referrer"
-              className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500 ease-in-out"
+              className="w-full h-full object-cover transition-all duration-500 ease-in-out hover:scale-105"
             />
           </div>
           <div className="absolute inset-0 rounded-full border border-black/5 pointer-events-none" />
