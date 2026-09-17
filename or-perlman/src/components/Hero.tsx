@@ -70,7 +70,7 @@ export default function Hero() {
       description: "Empowering the next generation of business architects through exxperience-based learning",
       bullets: [
         "Mentor and leadership facilitator ",
-        "Advanced Marketing lecturer at Code University of Applied Sciences",
+        "Advanced Marketing lecturer at Code University for Applied Sciences",
         "Board member of World Merit, a community of changemakers"
       ],
       buttonText: "INQUIRE MENTORING",
@@ -255,7 +255,7 @@ const BentoCard: React.FC<{ item: BentoItem }> = ({ item }) => {
           {/* Bottom Left Floating Custom Overlay Text */}
           {item.overlay && (
             <div className="absolute bottom-8 left-8 z-10 max-w-[85%]">
-              <h3 className="text-white text-3xl sm:text-4xl md:text-5xl font-display font-medium tracking-tight select-none drop-shadow-sm leading-none uppercase text-left">
+              <h2 className="text-white text-3xl sm:text-4xl md:text-5xl font-display font-medium tracking-tight select-none drop-shadow-sm leading-none uppercase text-left">
                 {item.overlay.includes(" & ") ? (
                   <>
                     <span className="block">{item.overlay.split(" & ")[0]} &</span>
@@ -264,7 +264,7 @@ const BentoCard: React.FC<{ item: BentoItem }> = ({ item }) => {
                 ) : (
                   item.overlay
                 )}
-              </h3>
+              </h2>
             </div>
           )}
         </div>
@@ -299,7 +299,7 @@ const BentoCard: React.FC<{ item: BentoItem }> = ({ item }) => {
             </span>
 
             {/* Header / Title */}
-            <h3 className="text-white text-2xl sm:text-3xl md:text-[32px] font-display font-black tracking-tight leading-[1.05] uppercase mb-4">
+            <h2 className="text-white text-2xl sm:text-3xl md:text-[32px] font-display font-black tracking-tight leading-[1.05] uppercase mb-4">
               {item.overlay.includes(" & ") ? (
                 <>
                   <span className="block">{item.overlay.split(" & ")[0]} &</span>
@@ -308,7 +308,7 @@ const BentoCard: React.FC<{ item: BentoItem }> = ({ item }) => {
               ) : (
                 item.overlay
               )}
-            </h3>
+            </h2>
 
             {/* Divider */}
             <div className="w-full h-[1px] bg-white/10 my-4" />
